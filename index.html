@@ -1,0 +1,1545 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Free Sora 2 watermark remover - Remove OpenAI Sora watermarks instantly with AI-powered technology. Zero quality loss, 30-second processing, 100% free forever. No sign-up required.">
+    <meta name="keywords" content="sora 2 watermark remover, remove sora watermark, sora watermark removal, openai sora watermark, free watermark remover, ai watermark removal">
+    <meta name="robots" content="index, follow">
+    <meta name="author" content="RemoveWatermarkSora">
+    <link rel="canonical" href="https://removewatermarksora.net/">
+    
+    <!-- Open Graph Tags -->
+    <meta property="og:title" content="Free Sora 2 Watermark Remover - Remove OpenAI Watermarks Instantly">
+    <meta property="og:description" content="AI-powered Sora 2 watermark removal. Zero quality loss, 30-second processing, 100% free forever. No sign-up required.">
+    <meta property="og:url" content="https://removewatermarksora.net/">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="https://removewatermarksora.net/og-image.jpg">
+    
+    <!-- Twitter Card Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Free Sora 2 Watermark Remover">
+    <meta name="twitter:description" content="Remove OpenAI Sora watermarks instantly with AI-powered technology. Zero quality loss, 100% free.">
+    <meta name="twitter:image" content="https://removewatermarksora.net/twitter-card.jpg">
+    
+    <!-- Theme Color -->
+    <meta name="theme-color" content="#6366f1">
+    
+    <!-- PWA Manifest -->
+    <link rel="manifest" href="/manifest.json">
+    
+    <!-- Apple Touch Icons -->
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/icon-120x120.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="apple-mobile-web-app-title" content="RemoveWatermarkSora">
+    
+    <!-- Microsoft Tiles -->
+    <meta name="msapplication-TileImage" content="/icon-144x144.png">
+    <meta name="msapplication-TileColor" content="#6366f1">
+    
+    <title>Free Sora 2 Watermark Remover - Remove OpenAI Watermarks Instantly</title>
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" as="style">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!-- External Stylesheet -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/svg+xml" href="favicon.svg">
+    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
+    
+    <style>
+        /* Critical CSS - Inline for Performance */
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --secondary: #a855f7;
+            --accent: #06b6d4;
+            --success: #10b981;
+            --warning: #f59e0b;
+            --error: #ef4444;
+            --background: #0f0f23;
+            --surface: #1a1a3a;
+            --surface-light: rgba(255, 255, 255, 0.05);
+            --text: #ffffff;
+            --text-secondary: #a1a1aa;
+            --border: rgba(255, 255, 255, 0.1);
+            --shadow: rgba(0, 0, 0, 0.3);
+            --glow: rgba(99, 102, 241, 0.4);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: var(--background);
+            color: var(--text);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+        
+        /* Header */
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: rgba(15, 15, 35, 0.8);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border);
+            transition: all 0.3s ease;
+        }
+        
+        .header-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 24px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 80px;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+        
+        .logo-full {
+            height: 40px;
+            width: auto;
+            max-width: 280px;
+            transition: all 0.3s ease;
+            filter: drop-shadow(0 0 10px rgba(99, 102, 241, 0.3));
+        }
+        
+        .logo-mobile {
+            height: 36px;
+            width: 36px;
+            display: none;
+            transition: all 0.3s ease;
+            filter: drop-shadow(0 0 8px rgba(99, 102, 241, 0.4));
+        }
+        
+        .logo:hover .logo-full,
+        .logo:hover .logo-mobile {
+            transform: scale(1.05);
+            filter: drop-shadow(0 0 15px rgba(99, 102, 241, 0.6));
+        }
+        
+        /* Logo loading state */
+        .logo-full,
+        .logo-mobile {
+            opacity: 0;
+            animation: logoFadeIn 0.8s ease-out 0.3s forwards, logoFloat 4s ease-in-out 1.1s infinite;
+        }
+        
+        @keyframes logoFadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(-10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes logoFloat {
+            0%, 100% { 
+                transform: translateY(0px); 
+            }
+            50% { 
+                transform: translateY(-2px); 
+            }
+        }
+        
+        /* Logo pulse effect on click */
+        .logo:active .logo-full,
+        .logo:active .logo-mobile {
+            animation: logoPulse 0.3s ease-out;
+        }
+        
+        @keyframes logoPulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(0.95); }
+            100% { transform: scale(1); }
+        }
+        
+        .cta-header {
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 12px 24px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 14px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 20px rgba(99, 102, 241, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .cta-header:hover::before {
+            left: 100%;
+        }
+        
+        .cta-header:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(99, 102, 241, 0.4);
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+            background: radial-gradient(ellipse at top, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
+                        radial-gradient(ellipse at bottom, rgba(168, 85, 247, 0.1) 0%, transparent 50%);
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(99, 102, 241, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(168, 85, 247, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 40% 40%, rgba(6, 182, 212, 0.1) 0%, transparent 50%);
+            animation: heroGlow 20s ease-in-out infinite;
+        }
+        
+        @keyframes heroGlow {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.8; }
+        }
+        
+        .hero-content {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 24px;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-headline {
+            font-size: clamp(48px, 8vw, 80px);
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 24px;
+            background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 50%, #ffffff 100%);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 6s ease-in-out infinite;
+            text-shadow: 0 0 40px rgba(255, 255, 255, 0.1);
+        }
+        
+        @keyframes gradientShift {
+            0%, 100% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+        }
+        
+        .hero-subheadline {
+            font-size: clamp(18px, 3vw, 24px);
+            color: var(--text-secondary);
+            margin-bottom: 48px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeInUp 0.8s ease 0.3s both;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .cta-primary {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: linear-gradient(135deg, var(--primary), var(--secondary));
+            color: white;
+            padding: 20px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 18px;
+            transition: all 0.3s ease;
+            box-shadow: 0 0 30px rgba(99, 102, 241, 0.4);
+            position: relative;
+            overflow: hidden;
+            animation: fadeInUp 0.8s ease 0.6s both;
+        }
+        
+        .cta-primary::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .cta-primary:hover::before {
+            left: 100%;
+        }
+        
+        .cta-primary:hover {
+            transform: translateY(-4px) scale(1.02);
+            box-shadow: 0 12px 40px rgba(99, 102, 241, 0.5);
+        }
+        
+        .trust-badges {
+            display: flex;
+            justify-content: center;
+            gap: 24px;
+            margin-top: 48px;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.8s ease 0.9s both;
+        }
+        
+        .trust-badge {
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 12px 24px;
+            border-radius: 50px;
+            font-size: 14px;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+        }
+        
+        .trust-badge:hover {
+            transform: translateY(-2px);
+            background: rgba(255, 255, 255, 0.08);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Before/After Section */
+        .before-after {
+            padding: 120px 24px;
+            max-width: 1000px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .before-after h2 {
+            font-size: clamp(32px, 5vw, 48px);
+            font-weight: 800;
+            margin-bottom: 16px;
+            background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 50%, #ffffff 100%);
+            background-size: 200% 200%;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            animation: gradientShift 6s ease-in-out infinite;
+        }
+        
+        .before-after p {
+            color: var(--text-secondary);
+            font-size: clamp(16px, 3vw, 20px);
+            margin-bottom: 48px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .comparison-container {
+            position: relative;
+            max-width: 400px;
+            width: 100%;
+            margin: 0 auto;
+            border-radius: 32px;
+            overflow: hidden;
+            box-shadow: 
+                0 0 60px rgba(99, 102, 241, 0.3),
+                0 30px 80px rgba(0, 0, 0, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.1);
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 2px solid rgba(255, 255, 255, 0.15);
+            aspect-ratio: 9 / 16;
+            transition: all 0.4s ease;
+        }
+        
+        .comparison-container:hover {
+            transform: translateY(-5px);
+            box-shadow: 
+                0 0 80px rgba(99, 102, 241, 0.4),
+                0 40px 100px rgba(0, 0, 0, 0.5),
+                inset 0 1px 0 rgba(255, 255, 255, 0.2);
+        }
+        
+        .comparison-slider {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            cursor: ew-resize;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+        }
+        
+        .before-image, .after-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center center;
+            background-repeat: no-repeat;
+            transition: opacity 0.3s ease;
+            object-fit: cover;
+        }
+        
+        /* Loading state for images - optimized for vertical content */
+        .comparison-slider.loading .before-image,
+        .comparison-slider.loading .after-image {
+            background-color: #1e1e2e;
+            background-image: linear-gradient(45deg, #2a2a3e 25%, transparent 25%), 
+                              linear-gradient(-45deg, #2a2a3e 25%, transparent 25%), 
+                              linear-gradient(45deg, transparent 75%, #2a2a3e 75%), 
+                              linear-gradient(-45deg, transparent 75%, #2a2a3e 75%);
+            background-size: 16px 16px;
+            background-position: 0 0, 0 8px, 8px -8px, -8px 0px;
+            animation: checkerboard 1.2s linear infinite;
+        }
+        
+        /* Add vertical content indicator */
+        .comparison-slider.loading::before {
+            content: 'Loading vertical video...';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 14px;
+            font-weight: 500;
+            z-index: 20;
+            text-align: center;
+            pointer-events: none;
+        }
+        
+        @keyframes checkerboard {
+            0% { background-position: 0 0, 0 10px, 10px -10px, -10px 0px; }
+            100% { background-position: 20px 0, 20px 10px, 30px -10px, 10px 0px; }
+        }
+        
+        .before-image {
+            background-image: url('before.png');
+        }
+        
+        .after-image {
+            background-image: url('after.png');
+            clip-path: inset(0 50% 0 0);
+        }
+        
+                .slider-handle {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(240, 240, 255, 0.95));
+            backdrop-filter: blur(15px);
+            -webkit-backdrop-filter: blur(15px);
+            border: 3px solid rgba(99, 102, 241, 0.6);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 22px;
+            font-weight: 700;
+            color: var(--primary);
+            cursor: ew-resize;
+            z-index: 20;
+            box-shadow: 
+                0 12px 30px rgba(0, 0, 0, 0.25),
+                0 0 20px rgba(99, 102, 241, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.8);
+            transition: all 0.3s ease;
+            user-select: none;
+            -webkit-user-select: none;
+            -moz-user-select: none;
+            -ms-user-select: none;
+            outline: none;
+        }
+        
+        .slider-handle:hover {
+            transform: translate(-50%, -50%) scale(1.1);
+            box-shadow: 0 0 30px rgba(99, 102, 241, 0.6), 0 6px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .slider-handle:active {
+            transform: translate(-50%, -50%) scale(0.95);
+        }
+        
+        .slider-handle:focus {
+            outline: 2px solid var(--primary);
+            outline-offset: 4px;
+        }
+        
+        /* Add visual feedback for touch devices */
+        @media (hover: none) and (pointer: coarse) {
+            .slider-handle {
+                width: 64px;
+                height: 64px;
+                font-size: 22px;
+            }
+            
+            .comparison-slider {
+                touch-action: pan-y pinch-zoom;
+            }
+        }
+        
+        .slider-line {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            width: 3px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary), var(--secondary));
+            transform: translateX(-50%);
+            box-shadow: 0 0 10px rgba(99, 102, 241, 0.5);
+            z-index: 5;
+        }
+        
+        /* Add subtle animations to enhance the experience */
+        .comparison-container:hover .slider-line {
+            box-shadow: 0 0 15px rgba(99, 102, 241, 0.7);
+        }
+        
+        .comparison-container:hover .slider-handle {
+            box-shadow: 0 0 25px rgba(99, 102, 241, 0.5), 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Comparison wrapper for proper spacing */
+        .comparison-wrapper {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 150px;
+            margin: 60px 0;
+        }
+        
+        /* Vertical video specific styles */
+        .comparison-container {
+            /* Ensure proper scaling on different screens */
+            min-height: 400px;
+            max-height: 80vh;
+            position: relative;
+        }
+        
+        /* Comparison wrapper for proper spacing */
+        .comparison-wrapper {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 40px 150px;
+            margin: 60px 0;
+        }
+        
+        /* Optimize for portrait orientation */
+        @media (orientation: portrait) {
+            .comparison-container {
+                max-width: 350px;
+                max-height: 70vh;
+            }
+        }
+        
+        /* Optimize for landscape orientation */
+        @media (orientation: landscape) {
+            .comparison-container {
+                max-width: 300px;
+                max-height: 75vh;
+            }
+        }
+        
+        .comparison-labels {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            display: block !important;
+            pointer-events: none;
+            z-index: 200;
+        }
+        
+        .comparison-labels .label-before {
+            position: absolute;
+            left: -160px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #ef4444 !important;
+            color: white !important;
+            padding: 16px 24px !important;
+            border-radius: 25px !important;
+            font-size: 14px !important;
+            font-weight: 700 !important;
+            text-transform: uppercase !important;
+            box-shadow: 0 10px 30px rgba(239, 68, 68, 0.4) !important;
+            display: block !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+        
+        .comparison-labels .label-after {
+            position: absolute;
+            right: -160px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #10b981 !important;
+            color: white !important;
+            padding: 16px 24px !important;
+            border-radius: 25px !important;
+            font-size: 14px !important;
+            font-weight: 700 !important;
+            text-transform: uppercase !important;
+            box-shadow: 0 10px 30px rgba(16, 185, 129, 0.4) !important;
+            display: block !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+        
+        .label {
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(4px);
+            -webkit-backdrop-filter: blur(4px);
+            color: white;
+            padding: 6px 12px;
+            border-radius: 16px;
+            font-size: 12px;
+            font-weight: 600;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Label Styling */
+        .label {
+            display: block !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+            text-align: center;
+            min-width: 100px;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+            letter-spacing: 0.5px;
+            cursor: default;
+            user-select: none;
+        }
+        
+        .label-before {
+            background: linear-gradient(135deg, rgba(239, 68, 68, 0.95), rgba(220, 38, 38, 0.9));
+            color: white;
+            border-color: rgba(255, 255, 255, 0.4);
+            box-shadow: 
+                0 10px 30px rgba(239, 68, 68, 0.3),
+                0 4px 15px rgba(239, 68, 68, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+        }
+        
+        .label-after {
+            background: linear-gradient(135deg, rgba(34, 197, 94, 0.95), rgba(21, 128, 61, 0.9));
+            color: white;
+            border-color: rgba(255, 255, 255, 0.4);
+            box-shadow: 
+                0 10px 30px rgba(34, 197, 94, 0.3),
+                0 4px 15px rgba(34, 197, 94, 0.2),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+            animation-delay: 0.6s;
+        }
+        
+        .label:hover {
+            transform: translateY(-3px) scale(1.05);
+        }
+        
+        .label-before:hover {
+            box-shadow: 
+                0 15px 40px rgba(239, 68, 68, 0.4),
+                0 8px 20px rgba(239, 68, 68, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.4);
+        }
+        
+        .label-after:hover {
+            box-shadow: 
+                0 15px 40px rgba(34, 197, 94, 0.4),
+                0 8px 20px rgba(34, 197, 94, 0.3),
+                inset 0 1px 0 rgba(255, 255, 255, 0.4);
+        }
+        
+        /* Mobile-responsive label styles */
+        @media (max-width: 768px) {
+            .comparison-wrapper {
+                padding: 25px 120px !important;
+            }
+            
+            .mobile-labels .label-before {
+                left: -110px !important;
+                padding: 8px 14px !important;
+                font-size: 11px !important;
+                min-width: 70px !important;
+                border-radius: 18px !important;
+            }
+            
+            .mobile-labels .label-after {
+                right: -110px !important;
+                padding: 8px 14px !important;
+                font-size: 11px !important;
+                min-width: 70px !important;
+                border-radius: 18px !important;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .comparison-wrapper {
+                padding: 20px 100px !important;
+            }
+            
+            .mobile-labels .label-before {
+                left: -90px !important;
+                padding: 6px 12px !important;
+                font-size: 10px !important;
+                min-width: 60px !important;
+                border-radius: 15px !important;
+            }
+            
+            .mobile-labels .label-after {
+                right: -90px !important;
+                padding: 6px 12px !important;
+                font-size: 10px !important;
+                min-width: 60px !important;
+                border-radius: 15px !important;
+            }
+            
+            .comparison-container {
+                max-width: 260px !important;
+            }
+        }
+        
+        @media (max-width: 360px) {
+            .comparison-wrapper {
+                padding: 15px 85px !important;
+            }
+            
+            .mobile-labels .label-before {
+                left: -75px !important;
+                padding: 5px 10px !important;
+                font-size: 9px !important;
+                min-width: 50px !important;
+            }
+            
+            .mobile-labels .label-after {
+                right: -75px !important;
+                padding: 5px 10px !important;
+                font-size: 9px !important;
+                min-width: 50px !important;
+            }
+            
+            .comparison-container {
+                max-width: 240px !important;
+            }
+        }
+        
+        /* Force label visibility - debug styles */
+        .comparison-labels,
+        .comparison-labels * {
+            display: block !important;
+            opacity: 1 !important;
+            visibility: visible !important;
+        }
+        
+        .label-before,
+        .label-after {
+            z-index: 999 !important;
+        }
+        
+        /* Prevent horizontal overflow */
+        body {
+            overflow-x: hidden;
+        }
+        
+        @keyframes labelSlideIn {
+            0% {
+                opacity: 0;
+                transform: translateY(30px) scale(0.8);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0) scale(1);
+            }
+        }
+        
+        /* Utility Classes */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        
+        .animate-in {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .header-content {
+                padding: 0 16px;
+                height: 70px;
+            }
+            
+            .hero {
+                padding: 100px 16px 80px;
+            }
+            
+            .hero-headline {
+                font-size: 36px;
+                margin-bottom: 16px;
+            }
+            
+            .hero-subheadline {
+                font-size: 18px;
+                margin-bottom: 32px;
+            }
+            
+            .cta-primary {
+                padding: 16px 32px;
+                font-size: 16px;
+            }
+            
+            .trust-badges {
+                gap: 16px;
+                margin-top: 32px;
+            }
+            
+            .trust-badge {
+                padding: 8px 16px;
+                font-size: 13px;
+            }
+            
+            .before-after {
+                padding: 80px 16px;
+            }
+            
+            .comparison-wrapper {
+                padding: 30px 100px;
+            }
+            
+            .comparison-container {
+                max-width: 300px;
+            }
+            
+            .comparison-labels {
+                left: -100px;
+                right: -100px;
+                width: calc(100% + 200px);
+            }
+            
+            .label {
+                padding: 10px 16px;
+                font-size: 12px;
+                min-width: 80px;
+            }
+            
+            .comparison-slider {
+                cursor: grab;
+            }
+            
+            .comparison-slider:active {
+                cursor: grabbing;
+            }
+            
+            .slider-handle {
+                width: 56px;
+                height: 56px;
+                font-size: 18px;
+                border-width: 2px;
+            }
+            
+            .comparison-labels {
+                font-size: 12px;
+            }
+            
+            .label {
+                padding: 6px 12px;
+                font-size: 11px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            /* Responsive logo display */
+            .logo-full {
+                height: 36px;
+                max-width: 220px;
+            }
+            
+            .logo-mobile {
+                height: 32px;
+                width: 32px;
+            }
+        }
+        
+        @media (max-width: 640px) {
+            .logo-full {
+                display: none;
+            }
+            
+            .logo-mobile {
+                display: block !important;
+            }
+            
+            .cta-header {
+                padding: 10px 20px;
+                font-size: 13px;
+            }
+            
+            .hero-headline {
+                font-size: 32px;
+            }
+            
+            .comparison-wrapper {
+                padding: 20px 80px;
+            }
+            
+            .comparison-container {
+                max-width: 280px;
+                border-radius: 20px;
+            }
+            
+            .comparison-labels {
+                left: -80px;
+                right: -80px;
+                width: calc(100% + 160px);
+            }
+            
+            .label {
+                padding: 8px 12px;
+                font-size: 11px;
+                min-width: 70px;
+                letter-spacing: 0.3px;
+            }
+            
+            .slider-handle {
+                width: 48px;
+                height: 48px;
+                font-size: 16px;
+            }
+            
+            .comparison-labels {
+                top: 12px;
+                left: 12px;
+                right: 12px;
+            }
+            
+            .label {
+                padding: 4px 8px;
+                font-size: 10px;
+                border-radius: 12px;
+            }
+        }
+    </style>
+    
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "RemoveWatermarkSora",
+        "description": "Free AI-powered Sora 2 watermark remover. Remove OpenAI Sora watermarks instantly with zero quality loss.",
+        "url": "https://removewatermarksora.net/",
+        "applicationCategory": "MultimediaApplication",
+        "operatingSystem": "Any",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.8",
+            "reviewCount": "3247"
+        },
+        "author": {
+            "@type": "Organization",
+            "name": "RemoveWatermarkSora"
+        }
+    }
+    </script>
+    
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "HowTo",
+        "name": "How to Remove Sora 2 Watermarks",
+        "description": "Step-by-step guide to remove OpenAI Sora watermarks from your videos instantly",
+        "step": [
+            {
+                "@type": "HowToStep",
+                "name": "Upload Your Video",
+                "text": "Drag and drop your Sora-generated video or click to browse files"
+            },
+            {
+                "@type": "HowToStep",
+                "name": "AI Processing",
+                "text": "Our advanced AI automatically detects and removes the watermark"
+            },
+            {
+                "@type": "HowToStep",
+                "name": "Download Clean Video",
+                "text": "Get your watermark-free video in original quality within 30 seconds"
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="header-content">
+            <a href="#" class="logo">
+                <img src="logo.svg" alt="RemoveWatermarkSora Logo" class="logo-full">
+                <img src="logo-icon.svg" alt="RemoveWatermarkSora" class="logo-mobile">
+            </a>
+            <a href="#remove-watermark" class="cta-header">Remove Watermark Free →</a>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1 class="hero-headline">Remove Sora 2 Watermarks<br>In Seconds. Effortlessly.</h1>
+            <p class="hero-subheadline">AI-powered. Free forever. No sign-up required.</p>
+            <a href="#remove-watermark" class="cta-primary">
+                <span>Remove Watermark Free</span>
+                <span>→</span>
+            </a>
+            <div class="trust-badges">
+                <div class="trust-badge">
+                    <span>✨</span>
+                    <span>100% Free</span>
+                </div>
+                <div class="trust-badge">
+                    <span>⚡</span>
+                    <span>30s Processing</span>
+                </div>
+                <div class="trust-badge">
+                    <span>🔒</span>
+                    <span>Secure & Private</span>
+                </div>
+                <div class="trust-badge">
+                    <span>💎</span>
+                    <span>Zero Quality Loss</span>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Before/After Showcase -->
+    <section class="before-after">
+        <div class="container">
+        <h2>See the Difference</h2>
+                <p>Our AI technology removes Sora watermarks from vertical videos while preserving perfect quality. Perfect for TikTok, Instagram Reels, and YouTube Shorts. Drag or swipe the slider to compare the results.</p>
+        <div class="comparison-wrapper">
+            <div class="comparison-container">
+                <div class="comparison-slider" id="comparisonSlider">
+                <div class="before-image"></div>
+                <div class="after-image" id="afterImage"></div>
+                <div class="slider-line" id="sliderLine"></div>
+                <div class="slider-handle" id="sliderHandle">⟷</div>
+            </div>
+            
+            <!-- Labels positioned outside on left and right -->
+            <div class="comparison-labels mobile-labels" style="position: absolute; top: 0; left: 0; right: 0; bottom: 0; z-index: 999;">
+                <div class="label label-before" style="position: absolute; left: -140px; top: 50%; transform: translateY(-50%); background: #ef4444; color: white; padding: 12px 20px; border-radius: 20px; font-size: 13px; font-weight: 700; text-transform: uppercase; box-shadow: 0 8px 25px rgba(239, 68, 68, 0.4); display: block; opacity: 1; visibility: visible; text-align: center; white-space: nowrap; min-width: 80px;">BEFORE</div>
+                <div class="label label-after" style="position: absolute; right: -140px; top: 50%; transform: translateY(-50%); background: #10b981; color: white; padding: 12px 20px; border-radius: 20px; font-size: 13px; font-weight: 700; text-transform: uppercase; box-shadow: 0 8px 25px rgba(16, 185, 129, 0.4); display: block; opacity: 1; visibility: visible; text-align: center; white-space: nowrap; min-width: 80px;">AFTER</div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Loading the rest of the content -->
+    <div id="main-content">
+        <!-- Content will be loaded here -->
+    </div>
+    
+    <script>
+        // Critical JavaScript - Inline for Performance
+        
+        // Before/After Slider
+        const slider = document.getElementById('comparisonSlider');
+        const afterImage = document.getElementById('afterImage');
+        const sliderLine = document.getElementById('sliderLine');
+        const sliderHandle = document.getElementById('sliderHandle');
+        
+        let isDragging = false;
+        
+        function updateSlider(e) {
+            if (!isDragging && e.type !== 'mousemove' && e.type !== 'touchmove') return;
+            
+            const rect = slider.getBoundingClientRect();
+            const x = e.clientX || (e.touches && e.touches[0] && e.touches[0].clientX) || (e.changedTouches && e.changedTouches[0] && e.changedTouches[0].clientX);
+            
+            if (x === undefined) return;
+            
+            const position = ((x - rect.left) / rect.width) * 100;
+            const clampedPosition = Math.min(Math.max(position, 0), 100);
+            
+            afterImage.style.clipPath = `inset(0 ${100 - clampedPosition}% 0 0)`;
+            sliderLine.style.left = `${clampedPosition}%`;
+            sliderHandle.style.left = `${clampedPosition}%`;
+        }
+        
+        // Mouse events
+        sliderHandle.addEventListener('mousedown', (e) => {
+            isDragging = true;
+            e.preventDefault();
+        });
+        
+        document.addEventListener('mouseup', () => {
+            isDragging = false;
+        });
+        
+        document.addEventListener('mousemove', updateSlider);
+        
+        // Touch events for mobile
+        sliderHandle.addEventListener('touchstart', (e) => {
+            isDragging = true;
+            e.preventDefault();
+            e.stopPropagation();
+        }, { passive: false });
+        
+        slider.addEventListener('touchstart', (e) => {
+            isDragging = true;
+            updateSlider(e);
+            e.preventDefault();
+        }, { passive: false });
+        
+        document.addEventListener('touchend', (e) => {
+            isDragging = false;
+        });
+        
+        document.addEventListener('touchmove', (e) => {
+            if (isDragging) {
+                updateSlider(e);
+                e.preventDefault();
+            }
+        }, { passive: false });
+        
+        // Enhanced hover effect for desktop
+        slider.addEventListener('mousemove', (e) => {
+            if (!isDragging) {
+                updateSlider(e);
+            }
+        });
+        
+        // Prevent text selection during drag
+        slider.addEventListener('selectstart', (e) => {
+            e.preventDefault();
+        });
+        
+        // Add keyboard support
+        sliderHandle.addEventListener('keydown', (e) => {
+            if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+                e.preventDefault();
+                const currentLeft = parseFloat(sliderHandle.style.left) || 50;
+                const increment = e.key === 'ArrowLeft' ? -2 : 2;
+                const newPosition = Math.min(Math.max(currentLeft + increment, 0), 100);
+                
+                afterImage.style.clipPath = `inset(0 ${100 - newPosition}% 0 0)`;
+                sliderLine.style.left = `${newPosition}%`;
+                sliderHandle.style.left = `${newPosition}%`;
+            }
+        });
+        
+        // Make handle focusable for keyboard navigation
+        sliderHandle.setAttribute('tabindex', '0');
+        sliderHandle.setAttribute('role', 'slider');
+        sliderHandle.setAttribute('aria-label', 'Drag to compare before and after watermark removal');
+        sliderHandle.setAttribute('aria-valuemin', '0');
+        sliderHandle.setAttribute('aria-valuemax', '100');
+        sliderHandle.setAttribute('aria-valuenow', '50');
+        
+        // Preload images for better performance
+        const preloadImages = () => {
+            const beforeImg = new Image();
+            const afterImg = new Image();
+            let loadedCount = 0;
+            
+            const checkAllLoaded = () => {
+                loadedCount++;
+                if (loadedCount === 2) {
+                    slider.classList.remove('loading');
+                }
+            };
+            
+            beforeImg.onload = checkAllLoaded;
+            afterImg.onload = checkAllLoaded;
+            
+            beforeImg.onerror = () => {
+                console.error('Failed to load before image');
+                checkAllLoaded();
+            };
+            
+            afterImg.onerror = () => {
+                console.error('Failed to load after image');
+                checkAllLoaded();
+            };
+            
+            beforeImg.src = 'before.png';
+            afterImg.src = 'after.png';
+            
+            // Add loading state
+            slider.classList.add('loading');
+        };
+        
+        // Initialize image preloading
+        preloadImages();
+        
+        // Update aria-valuenow when slider moves
+        const updateAriaValue = (position) => {
+            sliderHandle.setAttribute('aria-valuenow', Math.round(position));
+        };
+        
+        // Enhance updateSlider to include aria updates
+        const originalUpdateSlider = updateSlider;
+        updateSlider = function(e) {
+            originalUpdateSlider(e);
+            const rect = slider.getBoundingClientRect();
+            const x = e.clientX || (e.touches && e.touches[0] && e.touches[0].clientX) || (e.changedTouches && e.changedTouches[0] && e.changedTouches[0].clientX);
+            if (x !== undefined) {
+                const position = ((x - rect.left) / rect.width) * 100;
+                const clampedPosition = Math.min(Math.max(position, 0), 100);
+                updateAriaValue(clampedPosition);
+            }
+        };
+        
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-in');
+                }
+            });
+        }, observerOptions);
+        
+        // Observe elements when DOM is ready
+        document.addEventListener('DOMContentLoaded', () => {
+            document.querySelectorAll('.animate-on-scroll').forEach(el => {
+                observer.observe(el);
+            });
+        });
+        
+        // Header scroll effect
+        let lastScrollY = 0;
+        const header = document.querySelector('.header');
+        
+        window.addEventListener('scroll', () => {
+            const scrollY = window.scrollY;
+            
+            if (scrollY > 100) {
+                header.style.background = 'rgba(15, 15, 35, 0.95)';
+                header.style.boxShadow = '0 4px 20px rgba(0, 0, 0, 0.2)';
+            } else {
+                header.style.background = 'rgba(15, 15, 35, 0.8)';
+                header.style.boxShadow = 'none';
+            }
+            
+            lastScrollY = scrollY;
+        });
+        
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+        
+        // Load external JavaScript
+        const script = document.createElement('script');
+        script.src = 'script.js';
+        script.async = true;
+        document.head.appendChild(script);
+        
+        // Preload the rest of the content
+        setTimeout(() => {
+            loadMainContent();
+        }, 100);
+        
+        function loadMainContent() {
+            const mainContent = document.getElementById('main-content');
+            mainContent.innerHTML = `
+                <!-- How It Works Section -->
+                <section class="how-it-works" id="how-it-works">
+                    <div class="container">
+                        <div class="section-header animate-on-scroll">
+                            <h2 class="section-title">How It Works</h2>
+                            <p class="section-subtitle">Remove Sora watermarks in 3 simple steps</p>
+                        </div>
+                        
+                        <div class="steps-container">
+                            <div class="step animate-on-scroll" style="animation-delay: 0.1s;">
+                                <div class="step-icon">
+                                    <span class="step-number">1</span>
+                                    <div class="step-icon-inner">📁</div>
+                                </div>
+                                <h3 class="step-title">Upload Your Video</h3>
+                                <p class="step-description">Drag and drop your Sora-generated video or click to browse. Supports all major video formats.</p>
+                            </div>
+                            
+                            <div class="connecting-line animate-on-scroll" style="animation-delay: 0.2s;"></div>
+                            
+                            <div class="step animate-on-scroll" style="animation-delay: 0.3s;">
+                                <div class="step-icon">
+                                    <span class="step-number">2</span>
+                                    <div class="step-icon-inner">🤖</div>
+                                </div>
+                                <h3 class="step-title">AI Processing</h3>
+                                <p class="step-description">Our advanced AI detects and removes the Sora watermark while preserving original video quality.</p>
+                            </div>
+                            
+                            <div class="connecting-line animate-on-scroll" style="animation-delay: 0.4s;"></div>
+                            
+                            <div class="step animate-on-scroll" style="animation-delay: 0.5s;">
+                                <div class="step-icon">
+                                    <span class="step-number">3</span>
+                                    <div class="step-icon-inner">💾</div>
+                                </div>
+                                <h3 class="step-title">Download Clean Video</h3>
+                                <p class="step-description">Get your watermark-free video in seconds. Same quality, no watermark, ready to use.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Features Section -->
+                <section class="features" id="features">
+                    <div class="container">
+                        <div class="section-header animate-on-scroll">
+                            <h2 class="section-title">Powerful Features</h2>
+                            <p class="section-subtitle">Everything you need for perfect watermark removal</p>
+                        </div>
+                        
+                        <div class="features-grid">
+                            <div class="feature-card large animate-on-scroll">
+                                <div class="feature-icon">⚡</div>
+                                <h3 class="feature-title">Lightning Speed</h3>
+                                <p class="feature-description">Process most videos in under 30 seconds. Our optimized AI works 10x faster than traditional methods.</p>
+                                <div class="feature-visual">
+                                    <div class="speed-indicator">
+                                        <div class="speed-bar"></div>
+                                        <span>30s avg</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="feature-card animate-on-scroll">
+                                <div class="feature-icon">🤖</div>
+                                <h3 class="feature-title">AI Powered</h3>
+                                <p class="feature-description">Advanced machine learning algorithms trained specifically for Sora watermark detection.</p>
+                            </div>
+                            
+                            <div class="feature-card animate-on-scroll">
+                                <div class="feature-icon">💎</div>
+                                <h3 class="feature-title">Zero Quality Loss</h3>
+                                <p class="feature-description">Maintain original video quality with pixel-perfect watermark removal.</p>
+                            </div>
+                            
+                            <div class="feature-card large animate-on-scroll">
+                                <div class="feature-icon">🔒</div>
+                                <h3 class="feature-title">100% Private</h3>
+                                <p class="feature-description">Your videos are processed securely and deleted automatically after 24 hours. No data storage, no tracking.</p>
+                                <div class="feature-visual">
+                                    <div class="privacy-indicator">
+                                        <div class="shield-icon">🛡️</div>
+                                        <span>Auto-delete in 24h</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="feature-card animate-on-scroll">
+                                <div class="feature-icon">🎥</div>
+                                <h3 class="feature-title">All Formats</h3>
+                                <p class="feature-description">Supports MP4, MOV, AVI, and all popular video formats from Sora.</p>
+                            </div>
+                            
+                            <div class="feature-card animate-on-scroll">
+                                <div class="feature-icon">💰</div>
+                                <h3 class="feature-title">Forever Free</h3>
+                                <p class="feature-description">No hidden costs, no subscription fees. Completely free watermark removal, forever.</p>
+                            </div>
+                            
+                            <div class="feature-card large animate-on-scroll">
+                                <div class="feature-icon">📊</div>
+                                <h3 class="feature-title">Batch Processing</h3>
+                                <p class="feature-description">Remove watermarks from multiple videos simultaneously. Perfect for content creators with multiple Sora videos.</p>
+                                <div class="feature-visual">
+                                    <div class="batch-indicator">
+                                        <div class="file-stack">📄📄📄</div>
+                                        <span>Process multiple files</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="feature-card animate-on-scroll">
+                                <div class="feature-icon">⚡</div>
+                                <h3 class="feature-title">No Sign-Up</h3>
+                                <p class="feature-description">Start removing watermarks immediately. No registration, no email required.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- CTA Section -->
+                <section class="cta-section" id="remove-watermark">
+                    <div class="container">
+                        <div class="cta-content animate-on-scroll">
+                            <h2 class="cta-title">Ready to Remove Watermarks?</h2>
+                            <p class="cta-subtitle">Join 10,000+ creators who trust RemoveWatermarkSora for clean, professional videos</p>
+                            <a href="#" class="cta-button-large">
+                                <span>Remove Watermark Free</span>
+                                <span class="cta-arrow">→</span>
+                            </a>
+                            <div class="cta-stats">
+                                <div class="stat">
+                                    <span class="stat-number">10,247+</span>
+                                    <span class="stat-label">Videos Processed</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-number">4.8/5</span>
+                                    <span class="stat-label">User Rating</span>
+                                </div>
+                                <div class="stat">
+                                    <span class="stat-number">38s</span>
+                                    <span class="stat-label">Avg Processing</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+                
+                <!-- Footer -->
+                <footer class="footer">
+                    <div class="container">
+                        <div class="footer-content">
+                            <div class="footer-brand">
+                                <div class="footer-logo">
+                                    <img src="logo.svg" alt="RemoveWatermarkSora Logo" class="footer-logo-img">
+                                </div>
+                                <p class="footer-description">The most advanced, free Sora 2 watermark remover. Powered by AI, trusted by creators.</p>
+                            </div>
+                            
+                            <div class="footer-links">
+                                <div class="link-group">
+                                    <h4>Product</h4>
+                                    <a href="#how-it-works">How It Works</a>
+                                    <a href="#features">Features</a>
+                                    <a href="#remove-watermark">Remove Watermark</a>
+                                </div>
+                                
+                                <div class="link-group">
+                                    <h4>Support</h4>
+                                    <a href="#faq">FAQ</a>
+                                    <a href="#contact">Contact</a>
+                                    <a href="#help">Help Center</a>
+                                </div>
+                                
+                                <div class="link-group">
+                                    <h4>Legal</h4>
+                                    <a href="#privacy">Privacy Policy</a>
+                                    <a href="#terms">Terms of Service</a>
+                                    <a href="#disclaimer">Disclaimer</a>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="footer-bottom">
+                            <p>&copy; 2024 RemoveWatermarkSora. All rights reserved.</p>
+                            <p class="footer-note">Not affiliated with OpenAI or Sora. For educational and fair use purposes.</p>
+                        </div>
+                    </div>
+                </footer>
+            `;
+            
+            // Re-observe new elements
+            document.querySelectorAll('.animate-on-scroll').forEach(el => {
+                observer.observe(el);
+            });
+        }
+    </script>
+</body>
+</html>
