@@ -372,6 +372,34 @@
             box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
         }
         
+        /* Hero Features */
+        .hero-features {
+            margin-top: 48px;
+            display: flex;
+            flex-direction: column;
+            gap: 16px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .feature-highlight {
+            background: rgba(255, 255, 255, 0.08);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 12px;
+            padding: 16px 24px;
+            text-align: center;
+            font-size: 14px;
+            line-height: 1.5;
+            color: var(--text-secondary);
+        }
+        
+        .feature-highlight strong {
+            color: var(--text);
+            font-weight: 600;
+        }
+        
         /* Before/After Section */
         .before-after {
             padding: 120px 24px;
@@ -881,6 +909,15 @@
                 font-size: 13px;
             }
             
+            .hero-features {
+                margin-top: 32px;
+            }
+            
+            .feature-highlight {
+                padding: 12px 16px;
+                font-size: 13px;
+            }
+            
             .before-after {
                 padding: 80px 16px;
             }
@@ -1072,7 +1109,7 @@
     <section class="hero">
         <div class="hero-content">
             <h1 class="hero-headline">Remove Sora 2 Watermarks<br>In Seconds. Effortlessly.</h1>
-            <p class="hero-subheadline">Transform your Sora 2 videos effortlessly with our advanced AI-powered watermark removal technology. Remove OpenAI Sora watermarks in seconds while maintaining perfect video quality. Our free tool supports vertical videos optimized for TikTok, Instagram Reels, and YouTube Shorts. No sign-up required, no hidden fees - just professional results instantly.</p>
+            <p class="hero-subheadline">AI-powered watermark removal. Zero quality loss. 100% free forever.</p>
             <a href="https://cudoai.com/sora" target="_blank" rel="noopener noreferrer" class="cta-primary">
                 <span>Remove Watermark Free</span>
                 <span>→</span>
@@ -1095,14 +1132,27 @@
                     <span>Zero Quality Loss</span>
                 </div>
             </div>
+            
+            <!-- Key Features Highlight -->
+            <div class="hero-features">
+                <div class="feature-highlight">
+                    <strong>AI-Powered Technology</strong> - Advanced machine learning removes watermarks seamlessly
+                </div>
+                <div class="feature-highlight">
+                    <strong>Perfect for Social Media</strong> - Optimized for TikTok, Instagram Reels & YouTube Shorts
+                </div>
+                <div class="feature-highlight">
+                    <strong>No Sign-up Required</strong> - Start removing watermarks instantly, completely free
+                </div>
+            </div>
         </div>
     </section>
     
     <!-- Before/After Showcase -->
     <section class="before-after">
         <div class="container">
-        <h2>Remove Sora 2 Watermarks - See the Difference in Seconds</h2>
-                <p>Our advanced AI technology removes Sora 2 watermarks from vertical videos effortlessly and in seconds, while preserving perfect quality. This powerful watermark removal tool is specifically designed for content creators who need clean, professional videos for TikTok, Instagram Reels, and YouTube Shorts. The AI-powered system analyzes each frame to seamlessly remove OpenAI Sora watermarks without compromising video resolution or clarity. Simply drag or swipe the slider below to compare the before and after results and see how our technology transforms watermarked content into professional-grade videos.</p>
+        <h2>See the Difference</h2>
+                <p>Our AI technology removes Sora watermarks from vertical videos while preserving perfect quality. Perfect for TikTok, Instagram Reels, and YouTube Shorts. Drag the slider to compare results.</p>
         <div class="comparison-wrapper">
             <div class="comparison-container">
                 <div class="comparison-slider" id="comparisonSlider">
