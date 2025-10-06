@@ -1,6 +1,22 @@
 // Advanced JavaScript for RemoveWatermarkSora.net
 // Premium interactions, animations, and functionality
 
+// FAQ Toggle Functionality
+function toggleFAQ(button) {
+    const faqItem = button.parentElement;
+    const isActive = faqItem.classList.contains('active');
+    
+    // Close all other FAQ items
+    document.querySelectorAll('.faq-item').forEach(item => {
+        item.classList.remove('active');
+    });
+    
+    // Toggle current item
+    if (!isActive) {
+        faqItem.classList.add('active');
+    }
+}
+
 class RemoveWatermarkSora {
     constructor() {
         this.initializeApp();
