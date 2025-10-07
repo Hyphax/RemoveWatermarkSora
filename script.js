@@ -1,21 +1,7 @@
 // Advanced JavaScript for RemoveWatermarkSora.net
 // Premium interactions, animations, and functionality
 
-// FAQ Toggle Functionality
-function toggleFAQ(button) {
-    const faqItem = button.parentElement;
-    const isActive = faqItem.classList.contains('active');
-    
-    // Close all other FAQ items
-    document.querySelectorAll('.faq-item').forEach(item => {
-        item.classList.remove('active');
-    });
-    
-    // Toggle current item
-    if (!isActive) {
-        faqItem.classList.add('active');
-    }
-}
+// Clean, minimal JavaScript - no FAQ needed
 
 class RemoveWatermarkSora {
     constructor() {
@@ -230,169 +216,18 @@ class RemoveWatermarkSora {
     }
 
     loadAdditionalContent() {
-        // Load FAQ section
-        setTimeout(() => {
-            this.loadFAQSection();
-        }, 2000);
-
         // Load testimonials
         setTimeout(() => {
             this.loadTestimonials();
-        }, 3000);
+        }, 2000);
 
         // Load about section
         setTimeout(() => {
             this.loadAboutSection();
-        }, 4000);
+        }, 3000);
     }
 
-    loadFAQSection() {
-        const faqHTML = `
-            <section class="faq" id="faq">
-                <div class="container">
-                    <div class="section-header animate-on-scroll">
-                        <h2 class="section-title">Frequently Asked Questions</h2>
-                        <p class="section-subtitle">Everything you need to know about Sora watermark removal</p>
-                    </div>
-                    
-                    <div class="faq-container">
-                        ${this.generateFAQItems()}
-                    </div>
-                </div>
-            </section>
-        `;
-        
-        const ctaSection = document.querySelector('.cta-section');
-        ctaSection.insertAdjacentHTML('beforebegin', faqHTML);
-        
-        this.setupFAQInteractions();
-        this.observeNewElements();
-    }
 
-    generateFAQItems() {
-        const faqs = [
-            {
-                question: "Is it legal to remove Sora watermarks?",
-                answer: "Yes, it's legal to remove watermarks from content you have created or have permission to modify. Our tool is designed for legitimate use cases where you own the content or have proper licensing rights."
-            },
-            {
-                question: "How does the AI watermark removal work?",
-                answer: "Our advanced AI uses machine learning algorithms trained specifically on Sora watermark patterns. It analyzes the video frame by frame, identifies the watermark location, and intelligently reconstructs the underlying content while maintaining original quality."
-            },
-            {
-                question: "What video formats are supported?",
-                answer: "We support all major video formats including MP4, MOV, AVI, MKV, and WebM. The output format will match your input format to maintain compatibility with your workflow."
-            },
-            {
-                question: "Is there any quality loss during processing?",
-                answer: "No, our AI preservation technology ensures zero quality loss. The original video bitrate, resolution, and codec settings are maintained throughout the watermark removal process."
-            },
-            {
-                question: "How long does processing take?",
-                answer: "Most videos are processed in 30-60 seconds. Processing time depends on video length and resolution. 1-minute 1080p videos typically take 38 seconds on average."
-            },
-            {
-                question: "Is my video data secure and private?",
-                answer: "Absolutely. We process videos locally in your browser when possible, and all uploaded content is automatically deleted from our servers within 24 hours. We never store, share, or analyze your videos."
-            },
-            {
-                question: "Do I need to create an account?",
-                answer: "No sign-up required! You can start removing watermarks immediately. No email, no registration, no personal information needed."
-            },
-            {
-                question: "Is the service really free forever?",
-                answer: "Yes, our core watermark removal service is 100% free with no hidden costs, no subscription fees, and no limits on usage. We believe in democratizing access to professional video editing tools."
-            },
-            {
-                question: "Can I process multiple videos at once?",
-                answer: "Yes, our batch processing feature allows you to upload and process multiple videos simultaneously, saving you time when working with multiple Sora-generated content."
-            },
-            {
-                question: "What if the watermark isn't detected?",
-                answer: "Our AI has a 99.7% success rate with Sora watermarks. If detection fails, try ensuring the video is in good quality and the watermark is clearly visible. Contact support for manual assistance if needed."
-            },
-            {
-                question: "Does this work on mobile devices?",
-                answer: "Yes, our tool is fully optimized for mobile browsers. You can upload, process, and download videos directly from your smartphone or tablet."
-            },
-            {
-                question: "Can I use the processed videos commercially?",
-                answer: "Commercial usage depends on your rights to the original content. If you created the content with Sora or have commercial licensing, then yes. Always ensure you comply with OpenAI's terms of service."
-            },
-            {
-                question: "What's the maximum file size supported?",
-                answer: "We support videos up to 2GB in size. For larger files, consider compressing the video first or contact us for enterprise solutions."
-            },
-            {
-                question: "How accurate is the watermark removal?",
-                answer: "Our AI achieves 99.7% accuracy in watermark detection and removal. The technology is continuously improved based on the latest Sora watermark patterns."
-            },
-            {
-                question: "Are there any usage limits?",
-                answer: "No daily limits for individual users. Fair usage policies apply to prevent system abuse, but typical content creation needs are fully supported without restrictions."
-            },
-            {
-                question: "What happens to my video after processing?",
-                answer: "After you download your processed video, it's automatically deleted from our servers within 24 hours for security and privacy. We recommend downloading immediately after processing."
-            },
-            {
-                question: "Does this work with other AI video generators?",
-                answer: "Currently, we're specialized for Sora watermarks. However, we're developing support for other AI video platforms like Runway, Pika Labs, and Stable Video Diffusion."
-            },
-            {
-                question: "Can I integrate this into my workflow?",
-                answer: "We're developing API access for developers and integrations with popular video editing software. Join our newsletter to be notified when these features launch."
-            },
-            {
-                question: "What if I encounter technical issues?",
-                answer: "Our support team responds within 2 hours during business hours. Check our help center first, or contact us directly for technical assistance."
-            },
-            {
-                question: "Is there a desktop application?",
-                answer: "Currently web-based only, but we're developing desktop applications for Windows, Mac, and Linux for enhanced performance and offline processing capabilities."
-            }
-        ];
-
-        return faqs.map((faq, index) => `
-            <div class="faq-item animate-on-scroll" style="animation-delay: ${index * 0.1}s;">
-                <div class="faq-question">
-                    <span>${faq.question}</span>
-                    <div class="faq-icon">+</div>
-                </div>
-                <div class="faq-answer">
-                    <p>${faq.answer}</p>
-                </div>
-            </div>
-        `).join('');
-    }
-
-    setupFAQInteractions() {
-        document.querySelectorAll('.faq-question').forEach(question => {
-            question.addEventListener('click', () => {
-                const faqItem = question.parentElement;
-                const answer = faqItem.querySelector('.faq-answer');
-                const icon = question.querySelector('.faq-icon');
-                
-                const isOpen = faqItem.classList.contains('open');
-                
-                // Close all other FAQs
-                document.querySelectorAll('.faq-item.open').forEach(openItem => {
-                    if (openItem !== faqItem) {
-                        openItem.classList.remove('open');
-                        openItem.querySelector('.faq-icon').textContent = '+';
-                    }
-                });
-                
-                if (isOpen) {
-                    faqItem.classList.remove('open');
-                    icon.textContent = '+';
-                } else {
-                    faqItem.classList.add('open');
-                    icon.textContent = '×';
-                }
-            });
-        });
-    }
 
     loadTestimonials() {
         const testimonialsHTML = `
@@ -410,8 +245,8 @@ class RemoveWatermarkSora {
             </section>
         `;
         
-        const faqSection = document.querySelector('.faq');
-        faqSection.insertAdjacentHTML('beforebegin', testimonialsHTML);
+        const ctaSection = document.querySelector('.cta');
+        ctaSection.insertAdjacentHTML('beforebegin', testimonialsHTML);
         this.observeNewElements();
     }
 
@@ -676,69 +511,7 @@ const app = new RemoveWatermarkSora();
 // Additional CSS for dynamically loaded content
 const additionalStyles = `
 <style>
-/* FAQ Styles */
-.faq {
-    padding: 120px 0;
-    background: rgba(255, 255, 255, 0.01);
-}
 
-.faq-container {
-    max-width: 800px;
-    margin: 0 auto;
-}
-
-.faq-item {
-    background: rgba(255, 255, 255, 0.02);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 16px;
-    margin-bottom: 16px;
-    overflow: hidden;
-    transition: all 0.3s ease;
-}
-
-.faq-item:hover {
-    border-color: rgba(99, 102, 241, 0.3);
-    box-shadow: 0 8px 25px rgba(99, 102, 241, 0.1);
-}
-
-.faq-question {
-    padding: 24px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    cursor: pointer;
-    font-weight: 600;
-    font-size: 18px;
-    color: var(--text);
-}
-
-.faq-icon {
-    font-size: 24px;
-    font-weight: 300;
-    color: var(--primary);
-    transition: transform 0.3s ease;
-    user-select: none;
-}
-
-.faq-item.open .faq-icon {
-    transform: rotate(45deg);
-}
-
-.faq-answer {
-    max-height: 0;
-    overflow: hidden;
-    transition: all 0.3s ease;
-    padding: 0 24px;
-    color: var(--text-secondary);
-    line-height: 1.6;
-}
-
-.faq-item.open .faq-answer {
-    max-height: 200px;
-    padding: 0 24px 24px;
-}
 
 /* Testimonials Styles */
 .testimonials {
@@ -909,18 +682,7 @@ const additionalStyles = `
 
 /* Mobile Optimizations */
 @media (max-width: 768px) {
-    .faq-question {
-        padding: 20px;
-        font-size: 16px;
-    }
-    
-    .faq-answer {
-        padding: 0 20px;
-    }
-    
-    .faq-item.open .faq-answer {
-        padding: 0 20px 20px;
-    }
+
     
     .testimonials-grid {
         grid-template-columns: 1fr;

@@ -130,19 +130,19 @@
         }
         
         .logo-full {
-            height: 40px;
+            height: 36px;
             width: auto;
-            max-width: 280px;
+            max-width: 220px;
             transition: all 0.3s ease;
-            filter: drop-shadow(0 0 10px rgba(99, 102, 241, 0.3));
+            filter: drop-shadow(0 0 8px rgba(99, 102, 241, 0.3));
         }
         
         .logo-mobile {
-            height: 36px;
-            width: 36px;
+            height: 32px;
+            width: 32px;
             display: none;
             transition: all 0.3s ease;
-            filter: drop-shadow(0 0 8px rgba(99, 102, 241, 0.4));
+            filter: drop-shadow(0 0 6px rgba(99, 102, 241, 0.4));
         }
         
         .logo:hover .logo-full,
@@ -265,7 +265,7 @@
         }
         
         .hero-headline {
-            font-size: clamp(48px, 8vw, 80px);
+            font-size: clamp(64px, 12vw, 120px);
             font-weight: 800;
             line-height: 1.1;
             margin-bottom: 24px;
@@ -634,16 +634,18 @@
         /* Optimize for portrait orientation */
         @media (orientation: portrait) {
             .comparison-container {
-                max-width: 350px;
-                max-height: 70vh;
+                max-width: 400px;
+                max-height: 80vh;
+                width: 90vw;
             }
         }
         
         /* Optimize for landscape orientation */
         @media (orientation: landscape) {
             .comparison-container {
-                max-width: 300px;
-                max-height: 75vh;
+                max-width: 400px;
+                max-height: 85vh;
+                width: 60vw;
             }
         }
         
@@ -880,12 +882,27 @@
                 height: 70px;
             }
             
+            .logo-full {
+                display: none;
+            }
+            
+            .logo-mobile {
+                display: block;
+            }
+            
+            /* Make comparison larger on mobile */
+            .comparison-container {
+                max-width: 450px !important;
+                width: 95vw !important;
+                max-height: 85vh !important;
+            }
+            
             .hero {
                 padding: 100px 16px 80px;
             }
             
             .hero-headline {
-                font-size: 36px;
+                font-size: 54px;
                 margin-bottom: 16px;
             }
             
@@ -967,27 +984,31 @@
             }
         }
         
-        @media (max-width: 480px) {
-            /* Responsive logo display */
-            .logo-full {
-                height: 36px;
-                max-width: 220px;
-            }
-            
-            .logo-mobile {
-                height: 32px;
-                width: 32px;
-            }
-        }
-        
-        @media (max-width: 640px) {
+        @media (max-width: 768px) {
             .logo-full {
                 display: none;
             }
             
             .logo-mobile {
                 display: block !important;
+                height: 36px;
+                width: 36px;
             }
+        }
+        
+        @media (max-width: 480px) {
+            .logo-mobile {
+                height: 32px;
+                width: 32px;
+            }
+            
+            /* Even larger comparison on small phones */
+            .comparison-container {
+                max-width: 400px !important;
+                width: 92vw !important;
+                max-height: 80vh !important;
+            }
+        }
             
             .cta-header {
                 padding: 10px 20px;
@@ -995,7 +1016,7 @@
             }
             
             .hero-headline {
-                font-size: 32px;
+                font-size: 48px;
             }
             
             .comparison-wrapper {
@@ -1109,7 +1130,7 @@
     <section class="hero">
         <div class="hero-content">
             <h1 class="hero-headline">Remove Sora 2 Watermarks<br>In Seconds. Effortlessly.</h1>
-            <p class="hero-subheadline">AI-powered watermark removal. Zero quality loss. 100% free forever.</p>
+            <p class="hero-subheadline">Remove those pesky watermarks in seconds. Keep the quality, ditch the logo.</p>
             <a href="https://cudoai.com/sora" target="_blank" rel="noopener noreferrer" class="cta-primary">
                 <span>Remove Watermark Free</span>
                 <span>→</span>
@@ -1117,42 +1138,27 @@
             <div class="trust-badges">
                 <div class="trust-badge">
                     <span>✨</span>
-                    <span>100% Free</span>
+                    <span>Free Forever</span>
                 </div>
                 <div class="trust-badge">
                     <span>⚡</span>
-                    <span>30s Processing</span>
-                </div>
-                <div class="trust-badge">
-                    <span>🔒</span>
-                    <span>Secure & Private</span>
+                    <span>30 Seconds</span>
                 </div>
                 <div class="trust-badge">
                     <span>💎</span>
-                    <span>Zero Quality Loss</span>
+                    <span>Perfect Quality</span>
                 </div>
             </div>
             
-            <!-- Key Features Highlight -->
-            <div class="hero-features">
-                <div class="feature-highlight">
-                    <strong>AI-Powered Technology</strong> - Advanced machine learning removes watermarks seamlessly
-                </div>
-                <div class="feature-highlight">
-                    <strong>Perfect for Social Media</strong> - Optimized for TikTok, Instagram Reels & YouTube Shorts
-                </div>
-                <div class="feature-highlight">
-                    <strong>No Sign-up Required</strong> - Start removing watermarks instantly, completely free
-                </div>
-            </div>
+
         </div>
     </section>
     
     <!-- Before/After Showcase -->
     <section class="before-after">
         <div class="container">
-        <h2>See the Difference</h2>
-                <p>Our AI technology removes Sora watermarks from vertical videos while preserving perfect quality. Perfect for TikTok, Instagram Reels, and YouTube Shorts. Drag the slider to compare results.</p>
+        <h2>See What We Can Do</h2>
+                <p>Check out how clean your videos can look. We remove those Sora watermarks while keeping everything else crystal clear. Drag the slider to see the magic happen.</p>
         <div class="comparison-wrapper">
             <div class="comparison-container">
                 <div class="comparison-slider" id="comparisonSlider">
@@ -1397,8 +1403,8 @@
                 <section class="how-it-works" id="how-it-works">
                     <div class="container">
                         <div class="section-header animate-on-scroll">
-                            <h2 class="section-title">How It Works</h2>
-                            <p class="section-subtitle">Remove Sora watermarks in 3 simple steps</p>
+                            <h2 class="section-title">Here's How It Works</h2>
+                            <p class="section-subtitle">Three clicks and you're done. Seriously, it's that easy.</p>
                         </div>
                         
                         <div class="steps-container">
@@ -1407,8 +1413,8 @@
                                     <span class="step-number">1</span>
                                     <div class="step-icon-inner">📁</div>
                                 </div>
-                                <h3 class="step-title">Upload Your Video</h3>
-                                <p class="step-description">Drag and drop your Sora-generated video or click to browse. Supports all major video formats.</p>
+                                <h3 class="step-title">Drop Your Video</h3>
+                                <p class="step-description">Just drag it over or click to pick your file. We handle pretty much any video format you throw at us.</p>
                             </div>
                             
                             <div class="connecting-line animate-on-scroll" style="animation-delay: 0.2s;"></div>
@@ -1418,8 +1424,8 @@
                                     <span class="step-number">2</span>
                                     <div class="step-icon-inner">🤖</div>
                                 </div>
-                                <h3 class="step-title">AI Processing</h3>
-                                <p class="step-description">Our advanced AI detects and removes the Sora watermark while preserving original video quality.</p>
+                                <h3 class="step-title">We Do Our Thing</h3>
+                                <p class="step-description">Sit back while our tech finds and zaps that watermark. Your video stays perfect, just cleaner.</p>
                             </div>
                             
                             <div class="connecting-line animate-on-scroll" style="animation-delay: 0.4s;"></div>
@@ -1429,279 +1435,36 @@
                                     <span class="step-number">3</span>
                                     <div class="step-icon-inner">💾</div>
                                 </div>
-                                <h3 class="step-title">Download Clean Video</h3>
-                                <p class="step-description">Get your watermark-free video in seconds. Same quality, no watermark, ready to use.</p>
+                                <h3 class="step-title">Grab Your Clean Video</h3>
+                                <p class="step-description">Download your sparkly clean video. Same quality, minus the annoying logo. Ready to post!</p>
                             </div>
                         </div>
                     </div>
                 </section>
                 
-                <!-- Features Section -->
-                <section class="features" id="features">
-                    <div class="container">
-                        <div class="section-header animate-on-scroll">
-                            <h2 class="section-title">Powerful Features</h2>
-                            <p class="section-subtitle">Everything you need for perfect watermark removal</p>
-                        </div>
-                        
-                        <div class="features-grid">
-                            <div class="feature-card large animate-on-scroll">
-                                <div class="feature-icon">⚡</div>
-                                <h3 class="feature-title">Lightning Speed</h3>
-                                <p class="feature-description">Process most videos in under 30 seconds. Our optimized AI works 10x faster than traditional methods.</p>
-                                <div class="feature-visual">
-                                    <div class="speed-indicator">
-                                        <div class="speed-bar"></div>
-                                        <span>30s avg</span>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="feature-card animate-on-scroll">
-                                <div class="feature-icon">🤖</div>
-                                <h3 class="feature-title">AI Powered</h3>
-                                <p class="feature-description">Advanced machine learning algorithms trained specifically for Sora watermark detection.</p>
-                            </div>
-                            
-                            <div class="feature-card animate-on-scroll">
-                                <div class="feature-icon">💎</div>
-                                <h3 class="feature-title">Zero Quality Loss</h3>
-                                <p class="feature-description">Maintain original video quality with pixel-perfect watermark removal.</p>
-                            </div>
-                            
-                            <div class="feature-card large animate-on-scroll">
-                                <div class="feature-icon">🔒</div>
-                                <h3 class="feature-title">100% Private</h3>
-                                <p class="feature-description">Your videos are processed securely and deleted automatically after 24 hours. No data storage, no tracking.</p>
-                                <div class="feature-visual">
-                                    <div class="privacy-indicator">
-                                        <div class="shield-icon">🛡️</div>
-                                        <span>Auto-delete in 24h</span>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="feature-card animate-on-scroll">
-                                <div class="feature-icon">🎥</div>
-                                <h3 class="feature-title">All Formats</h3>
-                                <p class="feature-description">Supports MP4, MOV, AVI, and all popular video formats from Sora.</p>
-                            </div>
-                            
-                            <div class="feature-card animate-on-scroll">
-                                <div class="feature-icon">💰</div>
-                                <h3 class="feature-title">Forever Free</h3>
-                                <p class="feature-description">No hidden costs, no subscription fees. Completely free watermark removal, forever.</p>
-                            </div>
-                            
-                            <div class="feature-card large animate-on-scroll">
-                                <div class="feature-icon">📊</div>
-                                <h3 class="feature-title">Batch Processing</h3>
-                                <p class="feature-description">Remove watermarks from multiple videos simultaneously. Perfect for content creators with multiple Sora videos.</p>
-                                <div class="feature-visual">
-                                    <div class="batch-indicator">
-                                        <div class="file-stack">📄📄📄</div>
-                                        <span>Process multiple files</span>
-                                    </div>
-                                </div>
-                            </div>
-                            
-                            <div class="feature-card animate-on-scroll">
-                                <div class="feature-icon">⚡</div>
-                                <h3 class="feature-title">No Sign-Up</h3>
-                                <p class="feature-description">Start removing watermarks immediately. No registration, no email required.</p>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                
-                <!-- FAQ Section -->
-                <section class="faq-section" id="faq">
-                    <div class="container">
-                        <div class="section-header animate-on-scroll">
-                            <h2 class="section-title">Frequently Asked Questions</h2>
-                            <p class="section-subtitle">Everything you need to know about Sora 2 watermark removal</p>
-                        </div>
-                        
-                        <div class="faq-container animate-on-scroll">
-                            <div class="faq-item">
-                                <button class="faq-question" onclick="toggleFAQ(this)">
-                                    <span>How does the Sora 2 watermark removal work?</span>
-                                    <span class="faq-icon">+</span>
-                                </button>
-                                <div class="faq-answer">
-                                    <p>Our AI-powered technology uses advanced machine learning algorithms to analyze each frame of your Sora 2 video and intelligently remove watermarks while preserving the original video quality. The process takes approximately 30 seconds and maintains perfect resolution and clarity.</p>
-                                </div>
-                            </div>
-                            
-                            <div class="faq-item">
-                                <button class="faq-question" onclick="toggleFAQ(this)">
-                                    <span>Is the watermark removal really free?</span>
-                                    <span class="faq-icon">+</span>
-                                </button>
-                                <div class="faq-answer">
-                                    <p>Yes, our Sora 2 watermark removal tool is completely free forever. There are no hidden fees, subscription costs, or premium tiers. You can remove watermarks from unlimited videos without any charges or sign-up requirements.</p>
-                                </div>
-                            </div>
-                            
-                            <div class="faq-item">
-                                <button class="faq-question" onclick="toggleFAQ(this)">
-                                    <span>What video formats are supported?</span>
-                                    <span class="faq-icon">+</span>
-                                </button>
-                                <div class="faq-answer">
-                                    <p>We support all major video formats including MP4, MOV, AVI, and WebM. Our tool is optimized for vertical videos (9:16 aspect ratio) perfect for TikTok, Instagram Reels, and YouTube Shorts, but also works with horizontal and square formats.</p>
-                                </div>
-                            </div>
-                            
-                            <div class="faq-item">
-                                <button class="faq-question" onclick="toggleFAQ(this)">
-                                    <span>Will removing watermarks affect video quality?</span>
-                                    <span class="faq-icon">+</span>
-                                </button>
-                                <div class="faq-answer">
-                                    <p>No, our advanced AI technology ensures zero quality loss during the watermark removal process. The output video maintains the same resolution, bitrate, and visual clarity as the original Sora 2 generated content.</p>
-                                </div>
-                            </div>
-                            
-                            <div class="faq-item">
-                                <button class="faq-question" onclick="toggleFAQ(this)">
-                                    <span>How long does the processing take?</span>
-                                    <span class="faq-icon">+</span>
-                                </button>
-                                <div class="faq-answer">
-                                    <p>Most videos are processed within 30-60 seconds, depending on the video length and complexity. Our optimized AI algorithms work effortlessly to deliver fast results without compromising quality.</p>
-                                </div>
-                            </div>
-                            
-                            <div class="faq-item">
-                                <button class="faq-question" onclick="toggleFAQ(this)">
-                                    <span>Do I need to create an account?</span>
-                                    <span class="faq-icon">+</span>
-                                </button>
-                                <div class="faq-answer">
-                                    <p>No sign-up required! You can start removing Sora 2 watermarks immediately without creating an account, providing email addresses, or going through any registration process. Simply upload your video and get clean results in seconds.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                
-                <!-- Contact Section -->
-                <section class="contact-section" id="contact">
-                    <div class="container">
-                        <div class="section-header animate-on-scroll">
-                            <h2 class="section-title">Get in Touch</h2>
-                            <p class="section-subtitle">Have questions about Sora 2 watermark removal? We're here to help.</p>
-                        </div>
-                        
-                        <div class="contact-content animate-on-scroll">
-                            <div class="contact-info">
-                                <div class="contact-item">
-                                    <h3>Support</h3>
-                                    <p>Get help with watermark removal, technical issues, and feature requests.</p>
-                                    <a href="mailto:support@removewatermarksora.net" class="contact-link">support@removewatermarksora.net</a>
-                                </div>
-                                
-                                <div class="contact-item">
-                                    <h3>Business Inquiries</h3>
-                                    <p>Partnership opportunities, enterprise solutions, and business collaborations.</p>
-                                    <a href="mailto:business@removewatermarksora.net" class="contact-link">business@removewatermarksora.net</a>
-                                </div>
-                                
-                                <div class="contact-item">
-                                    <h3>Help Center</h3>
-                                    <p>Comprehensive guides, tutorials, and troubleshooting resources for Sora watermark removal.</p>
-                                    <a href="#help" class="contact-link">Visit Help Center</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                
-                <!-- Help Center Section -->
-                <section class="help-section" id="help">
-                    <div class="container">
-                        <div class="section-header animate-on-scroll">
-                            <h2 class="section-title">Help Center</h2>
-                            <p class="section-subtitle">Comprehensive guides and tutorials for Sora 2 watermark removal</p>
-                        </div>
-                        
-                        <div class="help-grid animate-on-scroll">
-                            <div class="help-card">
-                                <div class="help-icon">📚</div>
-                                <h3>Getting Started Guide</h3>
-                                <p>Learn how to remove Sora 2 watermarks from your videos step by step. Complete tutorial covering upload, processing, and download.</p>
-                                <a href="#how-it-works" class="help-link">Read Guide →</a>
-                            </div>
-                            
-                            <div class="help-card">
-                                <div class="help-icon">🎥</div>
-                                <h3>Video Tutorials</h3>
-                                <p>Watch detailed video tutorials showing the watermark removal process for different types of Sora content and formats.</p>
-                                <a href="#features" class="help-link">Watch Tutorials →</a>
-                            </div>
-                            
-                            <div class="help-card">
-                                <div class="help-icon">⚡</div>
-                                <h3>Troubleshooting</h3>
-                                <p>Common issues and solutions for Sora watermark removal. Tips for optimizing processing speed and quality.</p>
-                                <a href="#faq" class="help-link">View Solutions →</a>
-                            </div>
-                            
-                            <div class="help-card">
-                                <div class="help-icon">💡</div>
-                                <h3>Best Practices</h3>
-                                <p>Professional tips for content creators. How to prepare videos for watermark removal and optimize for social media platforms.</p>
-                                <a href="#contact" class="help-link">Learn More →</a>
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                
-                <!-- Legal Sections -->
-                <section class="legal-section" id="privacy">
-                    <div class="container">
-                        <h2>Privacy Policy</h2>
-                        <p>Your privacy is important to us. We do not store your videos or personal information. All Sora watermark removal processing happens securely and files are automatically deleted after processing.</p>
-                    </div>
-                </section>
-                
-                <section class="legal-section" id="terms">
-                    <div class="container">
-                        <h2>Terms of Service</h2>
-                        <p>By using our Sora watermark removal service, you agree to use it responsibly and in compliance with applicable laws. Our tool is designed for legitimate content editing purposes.</p>
-                    </div>
-                </section>
-                
-                <section class="legal-section" id="disclaimer">
-                    <div class="container">
-                        <h2>Disclaimer</h2>
-                        <p>This tool is provided for educational and legitimate content editing purposes. Users are responsible for ensuring they have the right to modify the content they process through our Sora watermark removal service.</p>
-                    </div>
-                </section>
-                
+
                 <!-- CTA Section -->
                 <section class="cta-section" id="remove-watermark">
                     <div class="container">
                         <div class="cta-content animate-on-scroll">
-                            <h2 class="cta-title">Ready to Remove Watermarks?</h2>
-                            <p class="cta-subtitle">Join 10,000+ creators who trust RemoveWatermarkSora for clean, professional videos</p>
+                            <h2 class="cta-title">Let's Clean Up Your Videos</h2>
+                            <p class="cta-subtitle">Over 10,000 creators already use this to make their content look amazing</p>
                             <a href="https://cudoai.com/sora" target="_blank" rel="noopener noreferrer" class="cta-button-large">
-                                <span>Remove Watermark Free</span>
+                                <span>Try It Free Now</span>
                                 <span class="cta-arrow">→</span>
                             </a>
                             <div class="cta-stats">
                                 <div class="stat">
                                     <span class="stat-number">10,247+</span>
-                                    <span class="stat-label">Videos Processed</span>
+                                    <span class="stat-label">Videos Cleaned</span>
                                 </div>
                                 <div class="stat">
                                     <span class="stat-number">4.8/5</span>
-                                    <span class="stat-label">User Rating</span>
+                                    <span class="stat-label">People Love It</span>
                                 </div>
                                 <div class="stat">
                                     <span class="stat-number">38s</span>
-                                    <span class="stat-label">Avg Processing</span>
+                                    <span class="stat-label">Average Wait Time</span>
                                 </div>
                             </div>
                         </div>
@@ -1721,30 +1484,14 @@
                             
                             <div class="footer-links">
                                 <div class="link-group">
-                                    <h4>Product</h4>
                                     <a href="#how-it-works">How It Works</a>
-                                    <a href="#features">Features</a>
-                                    <a href="https://cudoai.com/sora" target="_blank" rel="noopener noreferrer">Remove Watermark</a>
-                                </div>
-                                
-                                <div class="link-group">
-                                    <h4>Support</h4>
-                                    <a href="#faq">FAQ</a>
-                                    <a href="#contact">Contact</a>
-                                    <a href="#help">Help Center</a>
-                                </div>
-                                
-                                <div class="link-group">
-                                    <h4>Legal</h4>
-                                    <a href="#privacy">Privacy Policy</a>
-                                    <a href="#terms">Terms of Service</a>
-                                    <a href="#disclaimer">Disclaimer</a>
+                                    <a href="https://cudoai.com/sora" target="_blank" rel="noopener noreferrer">Try It Now</a>
                                 </div>
                             </div>
                         </div>
                         
                         <div class="footer-bottom">
-                            <p>&copy; 2024 RemoveWatermarkSora. All rights reserved.</p>
+                            <p>&copy; 2025 RemoveWatermarkSora. All rights reserved.</p>
                             <p class="footer-note">Not affiliated with OpenAI or Sora. For educational and fair use purposes.</p>
                         </div>
                     </div>
