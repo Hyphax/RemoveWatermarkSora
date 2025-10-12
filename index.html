@@ -59,6 +59,9 @@
     <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
     
+    <!-- Vercel Analytics -->
+    <script defer src="https://va.vercel-scripts.com/v1/script.debug.js" data-endpoint="/_vercel/insights/script.js"></script>
+    
     <style>
         /* Critical CSS - Inline for Performance */
         :root {
@@ -1385,6 +1388,103 @@
             });
         });
         
+        // Analytics Event Tracking
+        function trackEvent(eventName, properties = {}) {
+            if (typeof va !== 'undefined') {
+                va.track(eventName, properties);
+            }
+            console.log('Analytics Event:', eventName, properties);
+        }
+        
+        // Track CTA button clicks
+        document.addEventListener('click', (e) => {
+            const target = e.target.closest('a');
+            if (!target) return;
+            
+            // Track header CTA
+            if (target.classList.contains('cta-header')) {
+                trackEvent('Header CTA Clicked', {
+                    location: 'header',
+                    text: target.textContent.trim()
+                });
+            }
+            
+            // Track primary CTA
+            if (target.classList.contains('cta-primary')) {
+                trackEvent('Primary CTA Clicked', {
+                    location: 'hero',
+                    text: target.textContent.trim()
+                });
+            }
+            
+            // Track large CTA button
+            if (target.classList.contains('cta-button-large')) {
+                trackEvent('Large CTA Clicked', {
+                    location: 'cta-section',
+                    text: target.textContent.trim()
+                });
+            }
+            
+            // Track logo clicks
+            if (target.classList.contains('logo')) {
+                trackEvent('Logo Clicked', {
+                    location: 'header'
+                });
+            }
+        });
+        
+        // Track slider interactions
+        let sliderInteractionTracked = false;
+        if (sliderHandle) {
+            sliderHandle.addEventListener('mousedown', () => {
+                if (!sliderInteractionTracked) {
+                    trackEvent('Comparison Slider Used', {
+                        interaction: 'mousedown'
+                    });
+                    sliderInteractionTracked = true;
+                }
+            });
+            
+            sliderHandle.addEventListener('touchstart', () => {
+                if (!sliderInteractionTracked) {
+                    trackEvent('Comparison Slider Used', {
+                        interaction: 'touchstart'
+                    });
+                    sliderInteractionTracked = true;
+                }
+            });
+        }
+        
+        // Track scroll depth
+        let scrollDepthTracked = {
+            25: false,
+            50: false,
+            75: false,
+            100: false
+        };
+        
+        window.addEventListener('scroll', () => {
+            const scrollPercent = Math.round((window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100);
+            
+            Object.keys(scrollDepthTracked).forEach(depth => {
+                if (scrollPercent >= parseInt(depth) && !scrollDepthTracked[depth]) {
+                    trackEvent('Scroll Depth', {
+                        depth: `${depth}%`
+                    });
+                    scrollDepthTracked[depth] = true;
+                }
+            });
+        });
+        
+        // Track page load time
+        window.addEventListener('load', () => {
+            const loadTime = performance.timing.loadEventEnd - performance.timing.navigationStart;
+            trackEvent('Page Load Complete', {
+                loadTime: `${loadTime}ms`,
+                loadTimeSeconds: Math.round(loadTime / 1000 * 100) / 100
+            });
+        });
+        
         // Load external JavaScript
         const script = document.createElement('script');
         script.src = 'script.js';
@@ -1501,6 +1601,11 @@
             // Re-observe new elements
             document.querySelectorAll('.animate-on-scroll').forEach(el => {
                 observer.observe(el);
+            });
+            
+            // Track content loaded
+            trackEvent('Main Content Loaded', {
+                sections: ['how-it-works', 'cta-section', 'footer']
             });
         }
     </script>
